@@ -2,6 +2,28 @@
 import Header from './components/Header.vue';
 import CardList from './components/CardList.vue';
 import Drawer from './components/Drawer/Drawer.vue';
+import { onMounted, ref } from 'vue';
+import axios from 'axios';
+
+export type ItemsType = {
+  id: number;
+  title: string;
+  price: number;
+  imageUrl: string;
+}[];
+
+const items = ref<ItemsType>([]);
+const sortBy = ref('');
+const searchQuery = ref('');
+
+onMounted(async () => {
+  try {
+    const { data } = await axios.get('https://43cace301b44f096.mokky.dev/items');
+    items.value = data;
+  } catch (error) {
+    console.log(error);
+  }
+});
 </script>
 
 <template>
@@ -25,7 +47,7 @@ import Drawer from './components/Drawer/Drawer.vue';
           </div>
         </div>
       </div>
-      <CardList />
+      <CardList :items="items" />
     </div>
   </div>
 </template>
