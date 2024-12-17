@@ -6,9 +6,9 @@
       :img-url="item.imageUrl"
       :title="item.title"
       :is-added="true"
-      :is-favorite="true"
+      :is-favorite="item.isFavorite"
       v-on:clickAdd="onClickAdd"
-      v-on:clickFavorite="onClickFavorite"
+      :item="item"
       :price="item.price" />
   </div>
 </template>
@@ -18,14 +18,11 @@ import { ItemsType } from '../App.vue';
 import Card from './Card.vue';
 
 defineProps<{
-  items: ItemsType;
+  items: ItemsType[];
 }>();
 
 const onClickAdd = () => {
   alert('Hello ADD');
-};
-const onClickFavorite = () => {
-  alert('Hello Favorite');
 };
 </script>
 

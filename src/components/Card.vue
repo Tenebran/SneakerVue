@@ -1,13 +1,13 @@
 <template>
   <div>
     <div
-      class="relative bg-white border border-slate-100 rounded-3xl p-8 cursor-pointer hover:-translate-y-2 hover:shadow-xl transition">
+      class="relative h-[450px] bg-white border border-slate-100 rounded-3xl p-8 cursor-pointer hover:-translate-y-2 hover:shadow-xl transition">
       <img
-        @click="onClickFavorite"
+        @click="() => addToFavorite(item)"
         :src="isFavorite ? '/like-2.svg' : '/like-1.svg'"
         alt="Like 1"
         class="absolute top-8 left-8" />
-      <img :src="imgUrl" alt="Sneaker" />
+      <img :src="imgUrl" alt="Sneaker" class="h-[224px]" />
       <p class="mt-2">{{ title }}</p>
 
       <div class="flex justify-between mt-5">
@@ -23,15 +23,20 @@
 </template>
 
 <script setup lang="ts">
+import { inject } from 'vue';
+import { ItemsType } from '../App.vue';
+
 defineProps<{
   imgUrl: string;
+  item: ItemsType;
   title: string;
   price: number;
   isFavorite: boolean;
   isAdded: boolean;
   onClickAdd: () => void;
-  onClickFavorite: () => void;
 }>();
+
+const addToFavorite = inject('addToFavorite') as Function;
 </script>
 
 <style scoped></style>

@@ -2,7 +2,7 @@
 import Header from './components/Header.vue';
 import CardList from './components/CardList.vue';
 import Drawer from './components/Drawer/Drawer.vue';
-import { onMounted, ref, watch } from 'vue';
+import { onMounted, provide, ref, watch } from 'vue';
 import axios from 'axios';
 
 export type ItemsType = {
@@ -10,9 +10,12 @@ export type ItemsType = {
   title: string;
   price: number;
   imageUrl: string;
-}[];
+  isFavorite: boolean;
+  isAdded: boolean;
+  favoriteId: string;
+};
 
-const items = ref<ItemsType>([]);
+const items = ref<ItemsType[]>([]);
 const filters = ref({
   sortBy: 'title',
   searchQuery: '',
@@ -30,6 +33,36 @@ const onChangeInput = (event: Event) => {
   filters.value.searchQuery = target.value;
 };
 
+const addToFavorite = async (item: ItemsType) => {
+  try {
+    if (!item.isFavorite) {
+      const { data } = await axios.post(`https://43cace301b44f096.mokky.dev/favorite`, {
+        parentId: item.id,
+      });
+      item.favoriteId = data.id;
+      item.isFavorite = true;
+    } else {
+      await axios.delete(`https://43cace301b44f096.mokky.dev/favorite/${item.favoriteId}`);
+      item.isFavorite = false;
+      item.favoriteId = '';
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const fetcFavorites = async () => {
+  try {
+    const { data } = await axios.get(`https://43cace301b44f096.mokky.dev/favorite`);
+    items.value = items.value.map((item) => {
+      const favorite = data.find((f: any) => f.parentId === item.id);
+      return favorite ? { ...item, isFavorite: true, favoriteId: favorite.parentId } : item;
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 const fetchItems = async () => {
   try {
     const params: { sortBy: string; title?: string } = {
@@ -40,15 +73,20 @@ const fetchItems = async () => {
       params.title = `*${filters.value.searchQuery}*`;
     }
     const { data } = await axios.get(`https://43cace301b44f096.mokky.dev/items`, { params });
-    items.value = data;
+
+    items.value = data.map((item: any) => ({ ...item, isFavorite: false, isAdded: false }));
   } catch (error) {
     console.log(error);
   }
 };
 
-onMounted(fetchItems);
+onMounted(async () => {
+  await fetchItems(), await fetcFavorites();
+});
 
 watch(filters.value, fetchItems);
+
+provide('addToFavorite', addToFavorite);
 </script>
 
 <template>
