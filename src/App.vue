@@ -2,7 +2,7 @@
 import Header from './components/Header.vue';
 import CardList from './components/CardList.vue';
 import Drawer from './components/Drawer/Drawer.vue';
-import { onMounted, ref } from 'vue';
+import { onMounted, ref, watch } from 'vue';
 import axios from 'axios';
 
 export type ItemsType = {
@@ -13,17 +13,42 @@ export type ItemsType = {
 }[];
 
 const items = ref<ItemsType>([]);
-const sortBy = ref('');
-const searchQuery = ref('');
+const filters = ref({
+  sortBy: 'title',
+  searchQuery: '',
+});
 
-onMounted(async () => {
+const onChangeSelect = (event: Event) => {
+  const target = event.target as HTMLSelectElement;
+
+  filters.value.sortBy = target.value;
+};
+
+const onChangeInput = (event: Event) => {
+  const target = event.target as HTMLSelectElement;
+
+  filters.value.searchQuery = target.value;
+};
+
+const fetchItems = async () => {
   try {
-    const { data } = await axios.get('https://43cace301b44f096.mokky.dev/items');
+    const params: { sortBy: string; title?: string } = {
+      sortBy: filters.value.sortBy,
+    };
+
+    if (filters.value.searchQuery) {
+      params.title = `*${filters.value.searchQuery}*`;
+    }
+    const { data } = await axios.get(`https://43cace301b44f096.mokky.dev/items`, { params });
     items.value = data;
   } catch (error) {
     console.log(error);
   }
-});
+};
+
+onMounted(fetchItems);
+
+watch(filters.value, fetchItems);
 </script>
 
 <template>
@@ -34,14 +59,16 @@ onMounted(async () => {
       <div class="flex justify-between items-center">
         <h2 class="text-3xl font-bold mb-8">Все кросовки</h2>
         <div class="flex gap-4">
-          <select class="py-2 px-3 border rounded-md outline-none">
-            <option>По названию</option>
-            <option>По цене</option>
-            <option>Дешевле</option>
+          <select @change="onChangeSelect" class="py-2 px-3 border rounded-md outline-none">
+            <option value="name">По названию</option>
+            <option value="price">По цене (дешевле)</option>
+            <option value="-price">По цене (дороже)</option>
           </select>
           <div class="relative">
             <img src="/search.svg" class="absolute top-3 left-3" />
             <input
+              @input="onChangeInput"
+              :value="filters.searchQuery"
               placeholder="Поиск..."
               class="border rounded-md py-2 pl-10 pr-4 outline-none focus:border-green-400" />
           </div>
