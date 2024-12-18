@@ -27,7 +27,7 @@
 
 <script setup lang="ts">
 import { inject } from 'vue';
-import { ItemsType } from '../App.vue';
+import { ItemsType } from '../../App.vue';
 
 defineProps<{
   imgUrl: string;

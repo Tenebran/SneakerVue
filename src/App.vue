@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Header from './components/Header.vue';
-import CardList from './components/CardList.vue';
+import Header from './components/Header/Header.vue';
+import CardList from './components/Cards/CardList.vue';
 import Drawer from './components/Drawer/Drawer.vue';
 import { computed, onMounted, provide, ref, watch } from 'vue';
 import axios from 'axios';
@@ -16,6 +16,9 @@ export type ItemsType = {
 };
 
 const items = ref<ItemsType[]>([]);
+const localStorageCart = JSON.stringify(
+  localStorage.getItem('cart') ? localStorage.getItem('cart') : '[]'
+);
 const cart = ref<ItemsType[]>([]);
 const drawerOpen = ref(false);
 const isLoadingOrdner = ref(false);
@@ -127,10 +130,17 @@ const fetchItems = async () => {
 };
 
 onMounted(async () => {
+  const localCart = localStorage.getItem('cart');
+  cart.value = localCart ? JSON.parse(localCart) : [];
   await fetchItems(), await fetcFavorites();
+  items.value = items.value.map((i) => ({
+    ...i,
+    isAdded: cart.value.some((c) => c.id === i.id),
+  }));
 });
 
 watch(filters.value, fetchItems);
+watch(cart, () => localStorage.setItem('cart', JSON.stringify(cart.value)), { deep: true });
 
 provide('actions', { addToFavorite, onCklickAddPlus, removeFromCart });
 </script>

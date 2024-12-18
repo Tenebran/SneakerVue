@@ -13,7 +13,7 @@
 </template>
 
 <script setup lang="ts">
-import { ItemsType } from '../App.vue';
+import { ItemsType } from '../../App.vue';
 import Card from './Card.vue';
 
 defineProps<{
