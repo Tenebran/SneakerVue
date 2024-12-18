@@ -17,8 +17,10 @@
         <b> {{ (props.totalPrice / 100) * 5 }} р</b>
       </div>
       <button
+        @click="() => emit('createOrder')"
+        :disabled="!totalPrice || isLoadingOrdner"
         class="mt-4 bg-lime-500 hover:bg-lime-600 w-full disabled:bg-slate-300 rounded-xl py-3 cursor-pointer active:bg-lime-700 text-white">
-        Оформить заказ
+        {{ isLoadingOrdner ? 'отправка....' : !totalPrice ? 'корзина пустая' : 'оформить заказ' }}
       </button>
     </div>
   </div>
@@ -32,9 +34,10 @@ import CardListItem from './CardListItem.vue';
 const props = defineProps<{
   cart: ItemsType[];
   totalPrice: number;
+  isLoadingOrdner: boolean;
 }>();
 
-const emit = defineEmits(['onDrawerOpen']);
+const emit = defineEmits(['onDrawerOpen', 'createOrder']);
 </script>
 
 <style scoped></style>

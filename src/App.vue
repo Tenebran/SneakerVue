@@ -18,6 +18,7 @@ export type ItemsType = {
 const items = ref<ItemsType[]>([]);
 const cart = ref<ItemsType[]>([]);
 const drawerOpen = ref(false);
+const isLoadingOrdner = ref(false);
 const totalPrice = computed(() => {
   return cart.value.reduce((acc, item) => acc + item.price, 0);
 });
@@ -54,6 +55,26 @@ const addToFavorite = async (item: ItemsType) => {
       item.isFavorite = false;
       item.favoriteId = '';
     }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const createOrder = async () => {
+  try {
+    isLoadingOrdner.value = true;
+    const { data } = await axios.post(`https://43cace301b44f096.mokky.dev/orders`, {
+      items: cart.value,
+      totalPrice: totalPrice.value,
+    });
+
+    cart.value = [];
+    items.value = items.value.map((i) => {
+      return { ...i, isAdded: false };
+    });
+    isLoadingOrdner.value = false;
+
+    return data;
   } catch (error) {
     console.log(error);
   }
@@ -115,7 +136,13 @@ provide('actions', { addToFavorite, onCklickAddPlus, removeFromCart });
 </script>
 
 <template>
-  <Drawer v-if="drawerOpen" @on-drawer-open="onDrawerOpen" :cart="cart" :total-price="totalPrice" />
+  <Drawer
+    v-if="drawerOpen"
+    @on-drawer-open="onDrawerOpen"
+    :cart="cart"
+    :total-price="totalPrice"
+    @create-order="createOrder"
+    :isLoadingOrdner="isLoadingOrdner" />
   <div class="w-4/5 m-auto bg-white rounded-xl shadow-xl mt-14 mb-14">
     <Header @onDrawerOpen="onDrawerOpen" :total-price="totalPrice" />
     <div class="p-10">
