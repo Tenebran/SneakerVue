@@ -5,9 +5,8 @@
       :key="item.id"
       :img-url="item.imageUrl"
       :title="item.title"
-      :is-added="true"
+      :is-added="item.isAdded"
       :is-favorite="item.isFavorite"
-      v-on:clickAdd="onClickAdd"
       :item="item"
       :price="item.price" />
   </div>
@@ -20,10 +19,6 @@ import Card from './Card.vue';
 defineProps<{
   items: ItemsType[];
 }>();
-
-const onClickAdd = () => {
-  alert('Hello ADD');
-};
 </script>
 
 <style scoped></style>

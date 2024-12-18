@@ -1,6 +1,7 @@
 <template>
   <div class="items-center gap-5 mb-8 flex">
     <svg
+      @click="emit('onDrawerOpen')"
       class="opacity-30 cursor-pointer rotate-180 hover:opacity-100 transition hover:-translate-x-1"
       width="16"
       height="14"
@@ -25,6 +26,8 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const emit = defineEmits(['onDrawerOpen']);
+</script>
 
 <style scoped></style>

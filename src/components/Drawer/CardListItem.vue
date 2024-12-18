@@ -1,15 +1,16 @@
 <template>
   <div class="flex flex-col gap-5 flex-1">
-    <CardItem />
-    <CardItem />
-    <CardItem />
-    <CardItem />
-    <CardItem />
+    <CardItem v-for="c in cart" :key="c.id" :cart="c" />
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import { ItemsType } from '../../App.vue';
 import CardItem from './CardItem.vue';
+
+defineProps<{
+  cart: ItemsType[];
+}>();
 </script>
 
 <style lang="scss" scoped></style>

@@ -3,7 +3,7 @@
     <div
       class="relative h-[450px] bg-white border border-slate-100 rounded-3xl p-8 cursor-pointer hover:-translate-y-2 hover:shadow-xl transition">
       <img
-        @click="() => addToFavorite(item)"
+        @click="() => actions?.addToFavorite(item)"
         :src="isFavorite ? '/like-2.svg' : '/like-1.svg'"
         alt="Like 1"
         class="absolute top-8 left-8" />
@@ -16,7 +16,10 @@
           <b>{{ price }} руб</b>
         </div>
 
-        <img @click="onClickAdd" :src="isAdded ? '/checked.svg' : '/plus.svg'" alt="plus" />
+        <img
+          @click="actions?.onCklickAddPlus(item)"
+          :src="isAdded ? '/checked.svg' : '/plus.svg'"
+          alt="plus" />
       </div>
     </div>
   </div>
@@ -33,10 +36,12 @@ defineProps<{
   price: number;
   isFavorite: boolean;
   isAdded: boolean;
-  onClickAdd: () => void;
 }>();
 
-const addToFavorite = inject('addToFavorite') as Function;
+const actions = inject<{
+  addToFavorite: (item: ItemsType) => void;
+  onCklickAddPlus: (item: ItemsType) => void;
+}>('actions');
 </script>
 
 <style scoped></style>
