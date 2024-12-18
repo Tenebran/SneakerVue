@@ -24,7 +24,7 @@ defineProps<{
 
 const actions = inject<{
   removeFromCart: (id: ItemsType) => void;
-}>('actions');
+}>('cart');
 </script>
 
 <style scoped></style>
