@@ -9,7 +9,7 @@ import { ItemsType } from '../../App.vue';
 import CardItem from './CardItem.vue';
 
 defineProps<{
-  cart: ItemsType[];
+  cart?: ItemsType[];
 }>();
 </script>
 

@@ -24,6 +24,7 @@
 import axios from 'axios';
 import CardList from '../components/Cards/CardList.vue';
 import { ItemsType } from '../App.vue';
+import { debounce } from 'lodash';
 import { inject, onMounted, provide, Ref, ref, watch } from 'vue';
 const items = ref<ItemsType[]>([]);
 const action = inject<{ cart: Ref<ItemsType[]>; removeFromCart: (item: ItemsType) => void }>(
@@ -40,11 +41,11 @@ const onChangeSelect = (event: Event) => {
   filters.value.sortBy = target.value;
 };
 
-const onChangeInput = (event: Event) => {
+const onChangeInput = debounce((event: Event) => {
   const target = event.target as HTMLSelectElement;
 
   filters.value.searchQuery = target.value;
-};
+}, 400);
 
 const addToFavorite = async (item: ItemsType) => {
   try {
@@ -61,7 +62,7 @@ const addToFavorite = async (item: ItemsType) => {
       item.favoriteId = '';
     }
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 };
 
@@ -73,7 +74,7 @@ const fetcFavorites = async () => {
       return favorite ? { ...item, isFavorite: true, favoriteId: favorite.id } : item;
     });
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 };
 
@@ -90,7 +91,7 @@ const fetchItems = async () => {
 
     items.value = data.map((item: any) => ({ ...item, isFavorite: false, isAdded: false }));
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 };
 
@@ -104,6 +105,19 @@ onMounted(async () => {
 });
 
 provide('actions', { addToFavorite });
+
+action?.cart &&
+  watch(
+    action?.cart,
+    () => {
+      if (action)
+        items.value = items.value.map((i) => ({
+          ...i,
+          isAdded: action?.cart.value.some((c) => c.id === i.id),
+        }));
+    },
+    { deep: true }
+  );
 watch(filters.value, fetchItems);
 </script>
 

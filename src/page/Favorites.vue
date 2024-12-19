@@ -4,7 +4,7 @@
 
 <script setup lang="ts">
 import axios from 'axios';
-import { inject, onMounted, provide, Ref, ref } from 'vue';
+import { inject, onMounted, provide, Ref, ref, watch } from 'vue';
 import { ItemsType } from '../App.vue';
 import CardList from '../components/Cards/CardList.vue';
 
@@ -27,7 +27,7 @@ onMounted(async () => {
       isAdded: true,
     }));
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 
   if (action)
@@ -38,7 +38,6 @@ onMounted(async () => {
 });
 
 const addToFavorite = async (item: ItemsType) => {
-  console.log('addToFavorite', item.favoriteId);
   try {
     await axios.delete(`https://43cace301b44f096.mokky.dev/favorite/${item.parentId}`);
     favorites.value = favorites.value.filter((f) => f.id !== item.id);
@@ -46,6 +45,19 @@ const addToFavorite = async (item: ItemsType) => {
     console.error(error);
   }
 };
+
+action?.cart &&
+  watch(
+    action?.cart,
+    () => {
+      if (action)
+        favorites.value = favorites.value.map((i) => ({
+          ...i,
+          isAdded: action?.cart.value.some((c) => c.id === i.id),
+        }));
+    },
+    { deep: true }
+  );
 
 provide('actions', { addToFavorite });
 </script>

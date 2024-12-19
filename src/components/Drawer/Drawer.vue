@@ -3,10 +3,16 @@
   <div class="bg-white w-96 h-full fixed right-0 top-0 z-20 p-8">
     <DrawerHead @on-drawer-open="emit('onDrawerOpen')" />
 
-    <CardListItem :cart="cart" />
+    <CardListItem :cart="action?.cart.value" />
 
     <InfoBlock
-      v-if="!totalPrice"
+      v-if="orderId"
+      img-url="/order-success-icon.png"
+      title="Заказ Оформлен"
+      :description="`Ваш заказ #${orderId} скоро будет передан крьерской доставке`" />
+
+    <InfoBlock
+      v-if="!totalPrice && !orderId"
       img-url="/package-icon.png"
       title="Корзина пустая"
       description="Добавьте хотя  бы одну пару кросовок, чтобы сделать заказ" />
@@ -24,7 +30,7 @@
         <b> {{ (props.totalPrice / 100) * 5 }} р</b>
       </div>
       <button
-        @click="() => emit('createOrder')"
+        @click="createOrder"
         :disabled="!totalPrice || isLoadingOrdner"
         class="mt-4 bg-lime-500 hover:bg-lime-600 w-full disabled:bg-slate-300 rounded-xl py-3 cursor-pointer active:bg-lime-700 text-white">
         {{ isLoadingOrdner ? 'отправка....' : !totalPrice ? 'корзина пустая' : 'оформить заказ' }}
@@ -38,13 +44,37 @@ import DrawerHead from './DrawerHead.vue';
 import { ItemsType } from '../../App.vue';
 import CardListItem from './CardListItem.vue';
 import InfoBlock from '../infoBlock/InfoBlcok.vue';
-import { onMounted, onUnmounted } from 'vue';
+import { inject, onMounted, onUnmounted, Ref, ref } from 'vue';
+import axios from 'axios';
+
+const action = inject<{ cart: Ref<ItemsType[]>; removeFromCart: (item: ItemsType) => void }>(
+  'cart'
+);
+const isLoadingOrdner = ref(false);
+const orderId = ref(null);
 
 const props = defineProps<{
-  cart: ItemsType[];
   totalPrice: number;
-  isLoadingOrdner: boolean;
 }>();
+
+const createOrder = async () => {
+  try {
+    isLoadingOrdner.value = true;
+    const { data } = await axios.post(`https://43cace301b44f096.mokky.dev/orders`, {
+      items: action?.cart.value,
+      totalPrice: props.totalPrice,
+    });
+
+    orderId.value = data.id;
+    action?.cart.value.splice(0, action.cart.value.length);
+
+    isLoadingOrdner.value = false;
+
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+};
 
 onMounted(() => {
   document.body.classList.add('overflow-hidden');
@@ -54,7 +84,7 @@ onUnmounted(() => {
   document.body.classList.remove('overflow-hidden');
 });
 
-const emit = defineEmits(['onDrawerOpen', 'createOrder']);
+const emit = defineEmits(['onDrawerOpen']);
 </script>
 
 <style scoped></style>
