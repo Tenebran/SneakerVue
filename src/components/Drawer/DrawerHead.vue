@@ -22,12 +22,15 @@
         stroke-linejoin="round" />
     </svg>
 
-    <h2 class="text-2-xl font-bold">Корзина</h2>
+    <h2 class="text-2-xl font-bold">{{ t('Drawer.cart') }}</h2>
   </div>
 </template>
 
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n';
+
 const emit = defineEmits(['onDrawerOpen']);
+const { t } = useI18n();
 </script>
 
 <style scoped></style>

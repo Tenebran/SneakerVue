@@ -12,8 +12,8 @@
 
       <div class="flex justify-between mt-5">
         <div class="flex flex-col">
-          <span class="text-slate-400">Цена</span>
-          <b>{{ price }} руб</b>
+          <span class="text-slate-400">{{ t('Card.price') }}</span>
+          <b>{{ price }} {{ t('Card.currency_eur') }}</b>
         </div>
         <img
           v-if="actionsCart?.onCklickAddPlus"
@@ -28,6 +28,9 @@
 <script setup lang="ts">
 import { inject } from 'vue';
 import { ItemsType } from '../../App.vue';
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
 
 defineProps<{
   imgUrl: string;

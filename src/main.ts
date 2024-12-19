@@ -5,6 +5,7 @@ import { autoAnimatePlugin } from '@formkit/auto-animate/vue';
 import { createRouter, createMemoryHistory, createWebHistory } from 'vue-router';
 import Home from './page/Home.vue';
 import Favorites from './page/Favorites.vue';
+import i18n from './translations/i18n';
 
 const app = createApp(App);
 const routes = [
@@ -19,4 +20,5 @@ const router = createRouter({
 
 app.use(router);
 app.use(autoAnimatePlugin);
+app.use(i18n);
 app.mount('#app');

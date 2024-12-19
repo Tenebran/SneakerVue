@@ -8,24 +8,24 @@
     <InfoBlock
       v-if="orderId"
       img-url="/order-success-icon.png"
-      title="Заказ Оформлен"
-      :description="`Ваш заказ #${orderId} скоро будет передан крьерской доставке`" />
+      :title="t('Drawer.order_placed')"
+      :description="t('Drawer.order_notification', { orderId })" />
 
     <InfoBlock
       v-if="!totalPrice && !orderId"
       img-url="/package-icon.png"
-      title="Корзина пустая"
-      description="Добавьте хотя  бы одну пару кросовок, чтобы сделать заказ" />
+      :title="t('Drawer.cart_is_empty')"
+      :description="t('Drawer.add_at_least_one_pair_to_order')" />
 
     <div class="flex flex-col gap-4 mt-7" v-else>
       <div class="flex gap-2">
-        <span>Итого:</span>
+        <span>{{ t('Drawer.total') }}</span>
         <div class="border-b border-dashed flex-1"></div>
         <b>{{ totalPrice }}</b>
       </div>
 
       <div class="flex gap-2">
-        <span>Налог 5%:</span>
+        <span>{{ t('Drawer.tax_5_percent') }}</span>
         <div class="border-b border-dashed flex-1"></div>
         <b> {{ (props.totalPrice / 100) * 5 }} р</b>
       </div>
@@ -33,7 +33,13 @@
         @click="createOrder"
         :disabled="!totalPrice || isLoadingOrdner"
         class="mt-4 bg-lime-500 hover:bg-lime-600 w-full disabled:bg-slate-300 rounded-xl py-3 cursor-pointer active:bg-lime-700 text-white">
-        {{ isLoadingOrdner ? 'отправка....' : !totalPrice ? 'корзина пустая' : 'оформить заказ' }}
+        {{
+          isLoadingOrdner
+            ? t('Drawer.sending')
+            : !totalPrice
+            ? t('Drawer.cart_is_empty')
+            : t('Drawer.place_order')
+        }}
       </button>
     </div>
   </div>
@@ -46,6 +52,7 @@ import CardListItem from './CardListItem.vue';
 import InfoBlock from '../infoBlock/InfoBlcok.vue';
 import { inject, onMounted, onUnmounted, Ref, ref } from 'vue';
 import axios from 'axios';
+import { useI18n } from 'vue-i18n';
 
 const action = inject<{ cart: Ref<ItemsType[]>; removeFromCart: (item: ItemsType) => void }>(
   'cart'
@@ -53,6 +60,7 @@ const action = inject<{ cart: Ref<ItemsType[]>; removeFromCart: (item: ItemsType
 const isLoadingOrdner = ref(false);
 const orderId = ref(null);
 
+const { t } = useI18n();
 const props = defineProps<{
   totalPrice: number;
 }>();

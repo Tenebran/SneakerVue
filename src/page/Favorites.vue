@@ -9,8 +9,8 @@
     <InfoBlock
       v-if="!favorites.length && !loadingFavofites"
       img-url="/package-icon.png"
-      title="У вас нет закладок"
-      description="Добавьте хотя  бы одну пару кросовок в закладки" />
+      :title="t('Favorites.no_favorites')"
+      :description="t('Favorites.add_at_least_one_pair_to_favorites')" />
     <CardList :items="favorites" v-else />
   </div>
 </template>
@@ -21,11 +21,12 @@ import axios from 'axios';
 import { inject, onMounted, provide, Ref, ref, watch } from 'vue';
 import { ItemsType } from '../App.vue';
 import CardList from '../components/Cards/CardList.vue';
+import { useI18n } from 'vue-i18n';
 
 const action = inject<{ cart: Ref<ItemsType[]>; removeFromCart: (item: ItemsType) => void }>(
   'cart'
 );
-
+const { t } = useI18n();
 const favorites = ref<ItemsType[]>([]);
 const loadingFavofites = ref<boolean>(false);
 onMounted(async () => {
