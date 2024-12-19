@@ -1,0 +1,51 @@
+{
+  "Home": {
+    "all_sneakers": "Alla sneakers",
+    "by_name": "Efter namn",
+    "by_price_ascending": "Efter pris (stigande)",
+    "by_price_descending": "Efter pris (fallande)",
+    "search_placeholder": "Sök..."
+  },
+  "Header": {
+    "best_products_store": "Butik för bästa produkter",
+    "currency_eur": "Eur",
+    "favorites": "Favoriter"
+  },
+  "Favorites": {
+    "no_favorites": "Du har inga favoriter",
+    "add_at_least_one_pair_to_favorites": "Lägg till minst ett par sneakers i favoriter"
+  },
+  "Drawer": {
+    "order_placed": "Beställning lagd",
+    "order_notification": "Din beställning #{orderId} kommer snart att överlämnas till kuriren",
+    "cart_is_empty": "Kundvagnen är tom",
+    "add_at_least_one_pair_to_order": "Lägg till minst ett par sneakers för att göra en beställning",
+    "total": "Totalt:",
+    "tax_5_percent": "Moms 5%:",
+    "currency_eur": "Eur",
+    "sending": "Skickar...",
+    "place_order": "Gör beställning",
+    "cart": "Kundvagn"
+  },
+  "Card": {
+    "price": "Pris",
+    "currency_eur": "Eur"
+  },
+  "languageSelector": {
+    "en": "🇬🇧 Engelska",
+    "ru": "🇷🇺 Ryska",
+    "de": "🇩🇪 Tyska",
+    "es": "🇪🇸 Spanska",
+    "fr": "🇫🇷 Franska",
+    "it": "🇮🇹 Italienska",
+    "ja": "🇯🇵 Japanska",
+    "ko": "🇰🇷 Koreanska",
+    "nl": "🇳🇱 Nederländska",
+    "pl": "🇵🇱 Polska",
+    "pt": "🇵🇹 Portugisiska",
+    "sv": "🇸🇪 Svenska",
+    "tr": "🇹🇷 Turkiska",
+    "zh": "🇨🇳 Kinesiska",
+    "ar": "🇦🇪 Arabiska"
+  }
+}

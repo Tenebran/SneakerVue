@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-4 gap-5 mt-10" v-auto-animate>
+  <div class="grid grid-cols-4 gap-5 mt-10 select-none" v-auto-animate>
     <Card
       v-for="item in items"
       :key="item.id"
@@ -11,7 +11,6 @@
       :price="item.price" />
   </div>
 </template>
-
 <script setup lang="ts">
 import { ItemsType } from '../../App.vue';
 import Card from './Card.vue';

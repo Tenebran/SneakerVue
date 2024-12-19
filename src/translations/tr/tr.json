@@ -1,0 +1,51 @@
+{
+  "Home": {
+    "all_sneakers": "Tüm Ayakkabılar",
+    "by_name": "Ada Göre",
+    "by_price_ascending": "Fiyata Göre (Artan)",
+    "by_price_descending": "Fiyata Göre (Azalan)",
+    "search_placeholder": "Ara..."
+  },
+  "Header": {
+    "best_products_store": "En İyi Ürünler Mağazası",
+    "currency_eur": "Eur",
+    "favorites": "Favoriler"
+  },
+  "Favorites": {
+    "no_favorites": "Favorileriniz yok",
+    "add_at_least_one_pair_to_favorites": "Favorilere en az bir çift ayakkabı ekleyin"
+  },
+  "Drawer": {
+    "order_placed": "Sipariş Verildi",
+    "order_notification": "Siparişiniz #{orderId} yakında kuryeye teslim edilecektir",
+    "cart_is_empty": "Sepet boş",
+    "add_at_least_one_pair_to_order": "Sipariş vermek için en az bir çift ayakkabı ekleyin",
+    "total": "Toplam:",
+    "tax_5_percent": "Vergi %5:",
+    "currency_eur": "Eur",
+    "sending": "Gönderiliyor...",
+    "place_order": "Sipariş Ver",
+    "cart": "Sepet"
+  },
+  "Card": {
+    "price": "Fiyat",
+    "currency_eur": "Eur"
+  },
+  "languageSelector": {
+    "en": "🇬🇧 İngilizce",
+    "ru": "🇷🇺 Rusça",
+    "de": "🇩🇪 Almanca",
+    "es": "🇪🇸 İspanyolca",
+    "fr": "🇫🇷 Fransızca",
+    "it": "🇮🇹 İtalyanca",
+    "ja": "🇯🇵 Japonca",
+    "ko": "🇰🇷 Korece",
+    "nl": "🇳🇱 Hollandaca",
+    "pl": "🇵🇱 Lehçe",
+    "pt": "🇵🇹 Portekizce",
+    "sv": "🇸🇪 İsveççe",
+    "tr": "🇹🇷 Türkçe",
+    "zh": "🇨🇳 Çince",
+    "ar": "🇦🇪 Arapça"
+  }
+}

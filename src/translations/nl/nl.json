@@ -1,0 +1,51 @@
+{
+  "Home": {
+    "all_sneakers": "Alle Sneakers",
+    "by_name": "Op Naam",
+    "by_price_ascending": "Op Prijs (Oplopend)",
+    "by_price_descending": "Op Prijs (Aflopend)",
+    "search_placeholder": "Zoeken..."
+  },
+  "Header": {
+    "best_products_store": "Winkel van de Beste Producten",
+    "currency_eur": "Eur",
+    "favorites": "Favorieten"
+  },
+  "Favorites": {
+    "no_favorites": "U heeft geen favorieten",
+    "add_at_least_one_pair_to_favorites": "Voeg ten minste één paar sneakers toe aan uw favorieten"
+  },
+  "Drawer": {
+    "order_placed": "Bestelling Geplaatst",
+    "order_notification": "Uw bestelling #{orderId} wordt binnenkort aan de bezorger overhandigd",
+    "cart_is_empty": "Winkelwagen is leeg",
+    "add_at_least_one_pair_to_order": "Voeg ten minste één paar sneakers toe om een bestelling te plaatsen",
+    "total": "Totaal:",
+    "tax_5_percent": "Belasting 5%:",
+    "currency_eur": "Eur",
+    "sending": "Verzenden...",
+    "place_order": "Plaats Bestelling",
+    "cart": "Winkelwagen"
+  },
+  "Card": {
+    "price": "Prijs",
+    "currency_eur": "Eur"
+  },
+  "languageSelector": {
+    "en": "🇬🇧 Engels",
+    "ru": "🇷🇺 Russisch",
+    "de": "🇩🇪 Duits",
+    "es": "🇪🇸 Spaans",
+    "fr": "🇫🇷 Frans",
+    "it": "🇮🇹 Italiaans",
+    "ja": "🇯🇵 Japans",
+    "ko": "🇰🇷 Koreaans",
+    "nl": "🇳🇱 Nederlands",
+    "pl": "🇵🇱 Pools",
+    "pt": "🇵🇹 Portugees",
+    "sv": "🇸🇪 Zweeds",
+    "tr": "🇹🇷 Turks",
+    "zh": "🇨🇳 Chinees",
+    "ar": "🇦🇪 Arabisch"
+  }
+}

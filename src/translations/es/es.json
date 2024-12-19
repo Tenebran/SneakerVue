@@ -1,0 +1,51 @@
+{
+  "Home": {
+    "all_sneakers": "Todas las zapatillas",
+    "by_name": "Por nombre",
+    "by_price_ascending": "Por precio (ascendente)",
+    "by_price_descending": "Por precio (descendente)",
+    "search_placeholder": "Buscar..."
+  },
+  "Header": {
+    "best_products_store": "Tienda de los mejores productos",
+    "currency_eur": "Eur",
+    "favorites": "Favoritos"
+  },
+  "Favorites": {
+    "no_favorites": "No tienes favoritos",
+    "add_at_least_one_pair_to_favorites": "Agrega al menos un par de zapatillas a tus favoritos"
+  },
+  "Drawer": {
+    "order_placed": "Pedido realizado",
+    "order_notification": "Tu pedido #{orderId} será entregado al mensajero pronto",
+    "cart_is_empty": "El carrito está vacío",
+    "add_at_least_one_pair_to_order": "Agrega al menos un par de zapatillas para hacer un pedido",
+    "total": "Total:",
+    "tax_5_percent": "Impuesto 5%:",
+    "currency_eur": "Eur",
+    "sending": "Enviando...",
+    "place_order": "Realizar pedido",
+    "cart": "Carrito"
+  },
+  "Card": {
+    "price": "Precio",
+    "currency_eur": "Eur"
+  },
+  "languageSelector": {
+    "en": "🇬🇧 Inglés",
+    "ru": "🇷🇺 Ruso",
+    "de": "🇩🇪 Alemán",
+    "es": "🇪🇸 Español",
+    "fr": "🇫🇷 Francés",
+    "it": "🇮🇹 Italiano",
+    "ja": "🇯🇵 Japonés",
+    "ko": "🇰🇷 Coreano",
+    "nl": "🇳🇱 Neerlandés",
+    "pl": "🇵🇱 Polaco",
+    "pt": "🇵🇹 Portugués",
+    "sv": "🇸🇪 Sueco",
+    "tr": "🇹🇷 Turco",
+    "zh": "🇨🇳 Chino",
+    "ar": "🇦🇪 Árabe"
+  }
+}

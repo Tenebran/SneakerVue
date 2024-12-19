@@ -1,0 +1,51 @@
+{
+  "Home": {
+    "all_sneakers": "Tous les baskets",
+    "by_name": "Par nom",
+    "by_price_ascending": "Par prix (croissant)",
+    "by_price_descending": "Par prix (décroissant)",
+    "search_placeholder": "Rechercher..."
+  },
+  "Header": {
+    "best_products_store": "Magasin des meilleurs produits",
+    "currency_eur": "Eur",
+    "favorites": "Favoris"
+  },
+  "Favorites": {
+    "no_favorites": "Vous n'avez pas de favoris",
+    "add_at_least_one_pair_to_favorites": "Ajoutez au moins une paire de baskets aux favoris"
+  },
+  "Drawer": {
+    "order_placed": "Commande passée",
+    "order_notification": "Votre commande #{orderId} sera bientôt remise au transporteur",
+    "cart_is_empty": "Le panier est vide",
+    "add_at_least_one_pair_to_order": "Ajoutez au moins une paire de baskets pour passer une commande",
+    "total": "Total :",
+    "tax_5_percent": "Taxe 5% :",
+    "currency_eur": "Eur",
+    "sending": "Envoi...",
+    "place_order": "Passer commande",
+    "cart": "Panier"
+  },
+  "Card": {
+    "price": "Prix",
+    "currency_eur": "Eur"
+  },
+  "languageSelector": {
+    "en": "🇬🇧 Anglais",
+    "ru": "🇷🇺 Russe",
+    "de": "🇩🇪 Allemand",
+    "es": "🇪🇸 Espagnol",
+    "fr": "🇫🇷 Français",
+    "it": "🇮🇹 Italien",
+    "ja": "🇯🇵 Japonais",
+    "ko": "🇰🇷 Coréen",
+    "nl": "🇳🇱 Néerlandais",
+    "pl": "🇵🇱 Polonais",
+    "pt": "🇵🇹 Portugais",
+    "sv": "🇸🇪 Suédois",
+    "tr": "🇹🇷 Turc",
+    "zh": "🇨🇳 Chinois",
+    "ar": "🇦🇪 Arabe"
+  }
+}

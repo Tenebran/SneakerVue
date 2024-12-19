@@ -1,0 +1,51 @@
+{
+  "Home": {
+    "all_sneakers": "Wszystkie sneakersy",
+    "by_name": "Według nazwy",
+    "by_price_ascending": "Według ceny (rosnąco)",
+    "by_price_descending": "Według ceny (malejąco)",
+    "search_placeholder": "Szukaj..."
+  },
+  "Header": {
+    "best_products_store": "Sklep z najlepszymi produktami",
+    "currency_eur": "Eur",
+    "favorites": "Ulubione"
+  },
+  "Favorites": {
+    "no_favorites": "Nie masz ulubionych",
+    "add_at_least_one_pair_to_favorites": "Dodaj co najmniej jedną parę sneakersów do ulubionych"
+  },
+  "Drawer": {
+    "order_placed": "Zamówienie złożone",
+    "order_notification": "Twoje zamówienie #{orderId} wkrótce zostanie przekazane kurierowi",
+    "cart_is_empty": "Koszyk jest pusty",
+    "add_at_least_one_pair_to_order": "Dodaj co najmniej jedną parę sneakersów, aby złożyć zamówienie",
+    "total": "Razem:",
+    "tax_5_percent": "Podatek 5%:",
+    "currency_eur": "Eur",
+    "sending": "Wysyłanie...",
+    "place_order": "Złóż zamówienie",
+    "cart": "Koszyk"
+  },
+  "Card": {
+    "price": "Cena",
+    "currency_eur": "Eur"
+  },
+  "languageSelector": {
+    "en": "🇬🇧 Angielski",
+    "ru": "🇷🇺 Rosyjski",
+    "de": "🇩🇪 Niemiecki",
+    "es": "🇪🇸 Hiszpański",
+    "fr": "🇫🇷 Francuski",
+    "it": "🇮🇹 Włoski",
+    "ja": "🇯🇵 Japoński",
+    "ko": "🇰🇷 Koreański",
+    "nl": "🇳🇱 Holenderski",
+    "pl": "🇵🇱 Polski",
+    "pt": "🇵🇹 Portugalski",
+    "sv": "🇸🇪 Szwedzki",
+    "tr": "🇹🇷 Turecki",
+    "zh": "🇨🇳 Chiński",
+    "ar": "🇦🇪 Arabski"
+  }
+}

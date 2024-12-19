@@ -1,0 +1,51 @@
+{
+  "Home": {
+    "all_sneakers": "Todos os tênis",
+    "by_name": "Por nome",
+    "by_price_ascending": "Por preço (crescente)",
+    "by_price_descending": "Por preço (decrescente)",
+    "search_placeholder": "Pesquisar..."
+  },
+  "Header": {
+    "best_products_store": "Loja dos melhores produtos",
+    "currency_eur": "Eur",
+    "favorites": "Favoritos"
+  },
+  "Favorites": {
+    "no_favorites": "Você não tem favoritos",
+    "add_at_least_one_pair_to_favorites": "Adicione pelo menos um par de tênis aos favoritos"
+  },
+  "Drawer": {
+    "order_placed": "Pedido realizado",
+    "order_notification": "Seu pedido #{orderId} será entregue ao entregador em breve",
+    "cart_is_empty": "O carrinho está vazio",
+    "add_at_least_one_pair_to_order": "Adicione pelo menos um par de tênis para fazer o pedido",
+    "total": "Total:",
+    "tax_5_percent": "Imposto 5%:",
+    "currency_eur": "Eur",
+    "sending": "Enviando...",
+    "place_order": "Fazer pedido",
+    "cart": "Carrinho"
+  },
+  "Card": {
+    "price": "Preço",
+    "currency_eur": "Eur"
+  },
+  "languageSelector": {
+    "en": "🇬🇧 Inglês",
+    "ru": "🇷🇺 Russo",
+    "de": "🇩🇪 Alemão",
+    "es": "🇪🇸 Espanhol",
+    "fr": "🇫🇷 Francês",
+    "it": "🇮🇹 Italiano",
+    "ja": "🇯🇵 Japonês",
+    "ko": "🇰🇷 Coreano",
+    "nl": "🇳🇱 Holandês",
+    "pl": "🇵🇱 Polonês",
+    "pt": "🇵🇹 Português",
+    "sv": "🇸🇪 Sueco",
+    "tr": "🇹🇷 Turco",
+    "zh": "🇨🇳 Chinês",
+    "ar": "🇦🇪 Árabe"
+  }
+}
