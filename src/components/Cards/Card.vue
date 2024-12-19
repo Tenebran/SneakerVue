@@ -15,9 +15,9 @@
           <span class="text-slate-400">Цена</span>
           <b>{{ price }} руб</b>
         </div>
-
         <img
-          @click="actions?.onCklickAddPlus(item)"
+          v-if="actionsCart?.onCklickAddPlus"
+          @click="actionsCart?.onCklickAddPlus(item)"
           :src="isAdded ? '/checked.svg' : '/plus.svg'"
           alt="plus" />
       </div>
@@ -40,8 +40,11 @@ defineProps<{
 
 const actions = inject<{
   addToFavorite: (item: ItemsType) => void;
-  onCklickAddPlus: (item: ItemsType) => void;
 }>('actions');
+
+const actionsCart = inject<{
+  onCklickAddPlus: (item: ItemsType) => void;
+}>('cart');
 </script>
 
 <style scoped></style>

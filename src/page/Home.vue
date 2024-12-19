@@ -50,7 +50,8 @@ const addToFavorite = async (item: ItemsType) => {
   try {
     if (!item.isFavorite) {
       const { data } = await axios.post(`https://43cace301b44f096.mokky.dev/favorite`, {
-        parentId: item.id,
+        item_id: item.id,
+        isFavorite: true,
       });
       item.favoriteId = data.id;
       item.isFavorite = true;
@@ -68,7 +69,7 @@ const fetcFavorites = async () => {
   try {
     const { data } = await axios.get(`https://43cace301b44f096.mokky.dev/favorite`);
     items.value = items.value.map((item) => {
-      const favorite = data.find((f: any) => f.parentId === item.id);
+      const favorite = data.find((f: any) => f.item_id === item.id);
       return favorite ? { ...item, isFavorite: true, favoriteId: favorite.id } : item;
     });
   } catch (error) {
@@ -101,19 +102,8 @@ onMounted(async () => {
       isAdded: action?.cart.value.some((c) => c.id === i.id),
     }));
 });
-const addToCart = (item: ItemsType) => {
-  action?.cart.value.push(item);
-  item.isAdded = true;
-};
 
-const onCklickAddPlus = (item: ItemsType) => {
-  if (!item.isAdded) {
-    addToCart(item);
-  } else {
-    action?.removeFromCart(item);
-  }
-};
-provide('actions', { addToFavorite, onCklickAddPlus });
+provide('actions', { addToFavorite });
 watch(filters.value, fetchItems);
 </script>
 

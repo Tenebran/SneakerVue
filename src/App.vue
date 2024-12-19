@@ -13,6 +13,7 @@ export type ItemsType = {
   isFavorite: boolean;
   isAdded: boolean;
   favoriteId: string;
+  parentId?: number;
 };
 
 const localStorageCart = localStorage.getItem('cart')
@@ -27,6 +28,20 @@ const totalPrice = computed(() => {
 
 const onDrawerOpen = () => {
   drawerOpen.value = !drawerOpen.value;
+};
+
+const addToCart = (item: ItemsType) => {
+  cart.value.push(item);
+  item.isAdded = true;
+};
+
+const onCklickAddPlus = (item: ItemsType) => {
+  console.log('item', item);
+  if (!item.isAdded) {
+    addToCart(item);
+  } else {
+    removeFromCart(item);
+  }
 };
 
 const createOrder = async () => {
@@ -56,7 +71,7 @@ const removeFromCart = (item: ItemsType) => {
 
 watch(cart, () => localStorage.setItem('cart', JSON.stringify(cart.value)), { deep: true });
 
-provide('cart', { cart, removeFromCart });
+provide('cart', { cart, removeFromCart, onCklickAddPlus });
 </script>
 
 <template>
