@@ -2,7 +2,7 @@
   <div class="border items-center flex border-slate-200 p-4 rounded-xl gap-4">
     <img class="w-16 h-16" :src="cart.imageUrl" />
     <div class="flex flex-col flex-1 justify-between">
-      <p>{{ cart.title }}</p>
+      <p>{{ t(`Card.${cart.title}`) }}</p>
       <div class="flex justify-between mt-2">
         <b class="flex-1">{{ cart.price }}</b>
         <img
@@ -17,6 +17,9 @@
 <script setup lang="ts">
 import { inject } from 'vue';
 import { ItemsType } from '../../App.vue';
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
 
 defineProps<{
   cart: ItemsType;

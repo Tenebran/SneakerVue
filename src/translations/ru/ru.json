@@ -29,7 +29,19 @@
   },
   "Card": {
     "price": "Цена",
-    "currency_eur": "Eur"
+    "currency_eur": "Eur",
+    "nike_blazer_mid_suede": "Мужские Кроссовки Nike Blazer Mid Suede",
+    "nike_air_max_270": "Мужские Кроссовки Nike Air Max 270",
+    "nike_blazer_mid_suede_unique": "Мужские Кроссовки Nike Blazer Mid Suede",
+    "puma_x_aka_boku_future_rider": "Кроссовки Puma X Aka Boku Future Rider",
+    "future_rider_sneakers": "Кроссовки Future Rider",
+    "black_edition_sneakers": "Кроссовки Black Edition",
+    "orange_boomb_edition_sneakers": "Кроссовки Orange Boomb Edition",
+    "nike_air_max_270_unique": "Кроссовки Nike Air Max 270",
+    "nike_air_force_1_sneakers": "Кроссовки Nike Air Force 1",
+    "adidas_ultraboost_sneakers": "Кроссовки Adidas Ultraboost",
+    "puma_clyde_all_pro_sneakers": "Кроссовки Puma Clyde All-Pro",
+    "converse_chuck_taylor_all_star_sneakers": "Кроссовки Converse Chuck Taylor All-Star"
   },
   "languageSelector": {
     "en": "🇬🇧 Английский",

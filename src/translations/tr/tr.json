@@ -29,7 +29,19 @@
   },
   "Card": {
     "price": "Fiyat",
-    "currency_eur": "Eur"
+    "currency_eur": "Eur",
+    "nike_blazer_mid_suede": "Erkek Spor Ayakkabı Nike Blazer Mid Suede",
+    "nike_air_max_270": "Erkek Spor Ayakkabı Nike Air Max 270",
+    "nike_blazer_mid_suede_unique": "Erkek Spor Ayakkabı Nike Blazer Mid Süet",
+    "puma_x_aka_boku_future_rider": "Puma X Aka Boku Future Rider Spor Ayakkabı",
+    "future_rider_sneakers": "Future Rider Spor Ayakkabı",
+    "black_edition_sneakers": "Black Edition Spor Ayakkabı",
+    "orange_boomb_edition_sneakers": "Orange Boomb Edition Spor Ayakkabı",
+    "nike_air_max_270_unique": "Nike Air Max 270 Spor Ayakkabı",
+    "nike_air_force_1_sneakers": "Nike Air Force 1 Spor Ayakkabı",
+    "adidas_ultraboost_sneakers": "Adidas Ultraboost Spor Ayakkabı",
+    "puma_clyde_all_pro_sneakers": "Puma Clyde All-Pro Spor Ayakkabı",
+    "converse_chuck_taylor_all_star_sneakers": "Converse Chuck Taylor All-Star Spor Ayakkabı"
   },
   "languageSelector": {
     "en": "🇬🇧 İngilizce",

@@ -29,7 +29,19 @@
   },
   "Card": {
     "price": "Prezzo",
-    "currency_eur": "Eur"
+    "currency_eur": "Eur",
+    "nike_blazer_mid_suede": "Sneaker da Uomo Nike Blazer Mid Suede",
+    "nike_air_max_270": "Sneaker da Uomo Nike Air Max 270",
+    "nike_blazer_mid_suede_unique": "Sneaker da Uomo Nike Blazer Mid Suede",
+    "puma_x_aka_boku_future_rider": "Sneaker Puma X Aka Boku Future Rider",
+    "future_rider_sneakers": "Sneaker Future Rider",
+    "black_edition_sneakers": "Sneaker Black Edition",
+    "orange_boomb_edition_sneakers": "Sneaker Orange Boomb Edition",
+    "nike_air_max_270_unique": "Sneaker Nike Air Max 270",
+    "nike_air_force_1_sneakers": "Sneaker Nike Air Force 1",
+    "adidas_ultraboost_sneakers": "Sneaker Adidas Ultraboost",
+    "puma_clyde_all_pro_sneakers": "Sneaker Puma Clyde All-Pro",
+    "converse_chuck_taylor_all_star_sneakers": "Sneaker Converse Chuck Taylor All-Star"
   },
   "languageSelector": {
     "en": "🇬🇧 Inglese",

@@ -29,7 +29,19 @@
   },
   "Card": {
     "price": "가격",
-    "currency_eur": "유로"
+    "currency_eur": "유로",
+    "nike_blazer_mid_suede": "남성용 나이키 블레이저 미드 스웨이드 스니커즈",
+    "nike_air_max_270": "남성용 나이키 에어 맥스 270 스니커즈",
+    "nike_blazer_mid_suede_unique": "나이키 블레이저 미드 스웨이드 남성 스니커즈",
+    "puma_x_aka_boku_future_rider": "푸마 X 아카 보쿠 퓨처 라이더 스니커즈",
+    "future_rider_sneakers": "퓨처 라이더 스니커즈",
+    "black_edition_sneakers": "블랙 에디션 스니커즈",
+    "orange_boomb_edition_sneakers": "오렌지 붐 에디션 스니커즈",
+    "nike_air_max_270_unique": "나이키 에어맥스 270 스니커즈",
+    "nike_air_force_1_sneakers": "나이키 에어포스 1 스니커즈",
+    "adidas_ultraboost_sneakers": "아디다스 울트라부스트 스니커즈",
+    "puma_clyde_all_pro_sneakers": "푸마 클라이드 올 프로 스니커즈",
+    "converse_chuck_taylor_all_star_sneakers": "컨버스 척 테일러 올스타 스니커즈"
   },
   "languageSelector": {
     "en": "🇬🇧 영어",

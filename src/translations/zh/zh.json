@@ -29,7 +29,19 @@
   },
   "Card": {
     "price": "价格",
-    "currency_eur": "欧元"
+    "currency_eur": "欧元",
+    "nike_blazer_mid_suede": "男士运动鞋 Nike Blazer Mid Suede",
+    "nike_air_max_270": "男士运动鞋 Nike Air Max 270",
+    "nike_blazer_mid_suede_unique": "耐克 Blazer Mid Suede 男士运动鞋",
+    "puma_x_aka_boku_future_rider": "彪马 X Aka Boku Future Rider 运动鞋",
+    "future_rider_sneakers": "Future Rider 运动鞋",
+    "black_edition_sneakers": "Black Edition 运动鞋",
+    "orange_boomb_edition_sneakers": "Orange Boomb Edition 运动鞋",
+    "nike_air_max_270_unique": "耐克 Air Max 270 运动鞋",
+    "nike_air_force_1_sneakers": "耐克 Air Force 1 运动鞋",
+    "adidas_ultraboost_sneakers": "阿迪达斯 Ultraboost 运动鞋",
+    "puma_clyde_all_pro_sneakers": "彪马 Clyde All-Pro 运动鞋",
+    "converse_chuck_taylor_all_star_sneakers": "匡威 Chuck Taylor All-Star 运动鞋"
   },
   "languageSelector": {
     "en": "🇬🇧 英语",

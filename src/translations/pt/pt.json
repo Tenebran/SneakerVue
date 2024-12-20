@@ -29,7 +29,19 @@
   },
   "Card": {
     "price": "Preço",
-    "currency_eur": "Eur"
+    "currency_eur": "Eur",
+    "nike_blazer_mid_suede": "Tênis Masculino Nike Blazer Mid Suede",
+    "nike_air_max_270": "Tênis Masculino Nike Air Max 270",
+    "nike_blazer_mid_suede_unique": "Tênis Masculino Nike Blazer Mid Suede",
+    "puma_x_aka_boku_future_rider": "Tênis Puma X Aka Boku Future Rider",
+    "future_rider_sneakers": "Tênis Future Rider",
+    "black_edition_sneakers": "Tênis Black Edition",
+    "orange_boomb_edition_sneakers": "Tênis Orange Boomb Edition",
+    "nike_air_max_270_unique": "Tênis Nike Air Max 270",
+    "nike_air_force_1_sneakers": "Tênis Nike Air Force 1",
+    "adidas_ultraboost_sneakers": "Tênis Adidas Ultraboost",
+    "puma_clyde_all_pro_sneakers": "Tênis Puma Clyde All-Pro",
+    "converse_chuck_taylor_all_star_sneakers": "Tênis Converse Chuck Taylor All-Star"
   },
   "languageSelector": {
     "en": "🇬🇧 Inglês",

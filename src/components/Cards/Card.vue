@@ -8,7 +8,7 @@
         alt="Like 1"
         class="absolute top-8 left-8" />
       <img :src="imgUrl" alt="Sneaker" class="h-[224px]" />
-      <p class="mt-2">{{ title }}</p>
+      <p class="mt-2">{{ t(`Card.${title}`) }}</p>
 
       <div class="flex justify-between mt-5">
         <div class="flex flex-col">

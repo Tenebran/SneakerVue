@@ -29,7 +29,19 @@
   },
   "Card": {
     "price": "السعر",
-    "currency_eur": "يورو"
+    "currency_eur": "يورو",
+    "nike_blazer_mid_suede": "حذاء رياضي رجالي Nike Blazer Mid Suede",
+    "nike_air_max_270": "حذاء رياضي رجالي Nike Air Max 270",
+    "nike_blazer_mid_suede_unique": "حذاء نايكي بلازر ميد سويدي للرجال",
+    "puma_x_aka_boku_future_rider": "حذاء بوما X أكا بوكو فيوتشر رايدر",
+    "future_rider_sneakers": "حذاء فيوتشر رايدر",
+    "black_edition_sneakers": "حذاء بلاك إديشن",
+    "orange_boomb_edition_sneakers": "حذاء أورانج بومب إديشن",
+    "nike_air_max_270_unique": "حذاء نايكي إير ماكس 270",
+    "nike_air_force_1_sneakers": "حذاء نايكي إير فورس 1",
+    "adidas_ultraboost_sneakers": "حذاء أديداس ألترا بوست",
+    "puma_clyde_all_pro_sneakers": "حذاء بوما كلايد أول برو",
+    "converse_chuck_taylor_all_star_sneakers": "حذاء كونفرس تشاك تايلور أول ستار"
   },
   "languageSelector": {
     "en": "🇬🇧 الإنجليزية",
