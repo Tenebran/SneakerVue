@@ -27,7 +27,7 @@
       <div class="flex gap-2">
         <span>{{ t('Drawer.tax_5_percent') }}</span>
         <div class="border-b border-dashed flex-1"></div>
-        <b> {{ (props.totalPrice / 100) * 5 }} р</b>
+        <b> {{ (props.totalPrice / 100) * 5 }} {{ t('Drawer.currency_eur') }}</b>
       </div>
       <button
         @click="createOrder"
